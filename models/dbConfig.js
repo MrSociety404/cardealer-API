@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 
 mongoose.connect(
-  "mongodb://localhost:27017/cardealer",
+  "mongodb://45.9.191.251:27017/cardealer",
   {useNewUrlParser: true, useUnifiedTopology: true},
   (err) => {
     if(!err) console.log('MongoDB connected')
