@@ -4,13 +4,22 @@ const ObjectID = require('mongoose').Types.ObjectId
 
 const { CarModel } = require('../models/carModel')
 
-//Get all cars
-router.get('/', (req, res) => {
-  CarModel.find((err, docs) => {
-    if(!err) res.send(docs)
-    else console.log("Error to get data : " + err)
-  })
+router.get('/', async (req, res) => {
+  const cars = await CarModel.find().exec()
+  res.send(cars.map(car => {
+      delete car.retail
+      console.log(car)
+      return car
+    }))
 })
+
+//Get all cars
+// router.get('/', (req, res) => {
+//   await CarModel.find((err, docs) => {
+//     if(!err) res.send(docs)
+//     else console.log("Error to get data : " + err)
+//   })
+// })
 
 // //set new car
 // router.post('/', (req, res) => {
@@ -32,7 +41,7 @@ router.get('/', (req, res) => {
 // router.put('/:id',(req, res) => {
 //   if (!ObjectID.isValid(req.params.id))
 //     return res.status(400).send("ID unknow : " + req.params.id)
-  
+
 //   const updateRecord = {
 //     name: req.body.name,
 //     category: req.body.category,

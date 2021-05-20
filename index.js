@@ -10,6 +10,6 @@ mongoose.set('useFindAndModify', false)
 
 app.use(bodyParser.json())
 app.use(cors({origin: 'https://localhost/3000'}))
-app.use('/car', carRoutes)
+app.use('/api/car', carRoutes)
 
 app.listen(5500, 'localhost',() => console.log('Server started'))
