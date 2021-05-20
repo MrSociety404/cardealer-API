@@ -12,4 +12,4 @@ app.use(bodyParser.json())
 app.use(cors({origin: 'https://localhost/3000'}))
 app.use('/car', carRoutes)
 
-app.listen(5500, () => console.log('Server started'))
+app.listen(5500, 'localhost',() => console.log('Server started'))
