@@ -27,7 +27,7 @@ async function getCars (req, res, next) {
   try {
     cars = await Cars.findById(req.params.id)
     if(cars == null) {
-      return res.status(404).json({message: 'Cannot find subscriber'})
+      return res.status(404).json({message: 'Cannot find car'})
     }
   } catch (err) {
     return res.status(500).json({message: err.message})

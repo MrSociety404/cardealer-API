@@ -14,6 +14,6 @@ db.once('open', () => console.log('Connected to Database')) //If connexion succe
 app.use(express.json())
 
 const carsRouter = require('./routes/cars') //create a router for cars
-app.use('/cars', carsRouter) // if the path is '/cars" use his  root 
+app.use('/api/cars', carsRouter) // if the path is '/cars" use his  root 
 
 app.listen(5500, () => console.log('Server on')) //Start app
