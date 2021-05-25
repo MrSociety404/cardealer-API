@@ -18,6 +18,21 @@ router.get('/:id', getSale , (req, res) => {
 })
 
 // Creating One
+router.post('/', async (req, res) => {
+  const sale = new Sale({
+    client: req.body.client,
+    car: req.body.car,
+    dealer: req.body.dealer,
+    price: req.body.price
+  })
+  try {
+    const newSale = await sale.save()
+    res.status(201).json(newDealer)
+  } catch (err) {
+    res.status(400).json({message: err.message})
+  } 
+})
+
 // Updateing One
 // Deleting One
 
