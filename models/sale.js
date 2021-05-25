@@ -13,9 +13,14 @@ const saleSchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  Price: {
+  price: {
     type: Number,
     required: true
+  },
+  date: {
+    type: Date,
+    required: true,
+    default: Date.now
   }
 })
 

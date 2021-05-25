@@ -3,7 +3,6 @@ require('dotenv').config()
 const express = require('express')
 const app = express()
 const mongoose = require('mongoose')
-const cors = require('cors')
 
 //Connect MongoDB
 mongoose.connect(process.env.DATABASE_URL, { useNewUrlParser: true, useUnifiedTopology: true })
@@ -13,7 +12,6 @@ db.once('open', () => console.log('Connected to Database')) //If connexion succe
 
 //Add json accept in the app
 app.use(express.json())
-app.use(cors({origin: 'http://localhost:3000'}))
 
 const carsRouter = require('./routes/cars') //create a router for cars
 const carsRouterAdmin = require('./routes/carsAdmin') //create a router for cars
