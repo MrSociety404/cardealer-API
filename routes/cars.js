@@ -5,7 +5,11 @@ const Car = require('../models/car')
 // Getting All
 router.get('/', async (req, res) => {
   try {
-    const cars = await Car.find({},['_id','label','category','resell','speed','image'])
+    const cars = await Car.find({},['_id','label','category','resell','speed','image'], {
+      sort: {
+        resell: "asc"
+      }
+    })
     res.json(cars)
   } catch (err) {
     res.status(500).json({message: err.message})
