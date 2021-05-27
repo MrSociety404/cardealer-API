@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 GET http://localhost:5500/cars
 
 ###
@@ -12,4 +13,100 @@ Content-Type: application/json
   "username": "MrSociety404",
   "password": "root",
   "image": "https://i.imgur.com/zYujvDw.jpg"
+=======
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwYWY1MzVkZmE4ZDgxMWVkY2IxMmE1ZSIsInVzZXJuYW1lIjoiTXJTb2NpZXR5NDA0IiwiaWF0IjoxNjIyMTA3NTE1LCJleHAiOjE2MjIxMTQ3MTV9.hd5YZ-WLUlkxLAo2MZH_NnWKMHuJnMbcROhtFrwMkmo
+
+###
+GET http://localhost:5500/cars
+
+###
+
+GET http://localhost:5500/cars/60ab97f7881c2c385891f0e7
+
+###
+POST http://localhost:5500/cars
+Content-Type: application/json
+
+{
+  
+}
+
+###
+PATCH http://localhost:5500/cars/60ab97f7881c2c385891f0e7
+
+
+###
+POST http://localhost:5500/dealers
+Content-Type: application/json
+Authorization: Bear {{token}}
+{
+  "firstname": "Emma",
+  "lastname": "Simo",
+  "username": "Emmatrousse",
+  "password": "emma1803"
+}
+
+###
+POST http://localhost:5500/dealers/login
+Content-Type: application/json
+
+{
+  "username": "MrSociety404",
+  "password":"emma1803"
+}
+
+###
+GET http://localhost:5500/dealers/60af535dfa8d811edcb12a5e
+Authorization: Bear {{token}}
+
+###
+GET http://localhost:5500/dealers
+Authorization: Bear {{token}}
+
+###
+DELETE http://localhost:5500/dealers/60af54891395191edc586262
+Authorization: Bear {{token}}
+###
+GET http://localhost:5500/jobs
+Authorization: Bear {{token}}
+
+###
+GET http://localhost:5500/jobs/60af5a197cc99e27004e2d5f
+Authorization: Bear {{token}}
+###
+POST http://localhost:5500/jobs
+Content-Type: application/json
+
+{
+  "name": "req.body.name",
+  "phone": "5551514",
+  "experience": "req.body.experience",
+  "availability": "req.body.availability",
+  "motivation": "req.body.motivation",
+  "comment": "req.body.comment"
+}
+
+###
+DELETE http://localhost:5500/jobs/60af5a197cc99e27004e2d5f
+Authorization: Bear {{token}}
+
+###
+GET http://localhost:5500/sales
+Authorization: Bear {{token}}
+
+###
+GET http://localhost:5500/sales/60af5fcb696b934d50f5b042
+Authorization: Bear {{token}}
+
+###
+POST http://localhost:5500/sales
+Content-Type: application/json
+Authorization: Bear {{token}}
+
+{
+  "client" : "Fabien Karmel",
+  "dealer" : "60af535dfa8d811edcb12a5e",
+  "car" : "60ab97f7881c2c385891efc5",
+  "price": 5000
+>>>>>>> 728048a1b0914372e3fa211254c1db377391e799
 }
