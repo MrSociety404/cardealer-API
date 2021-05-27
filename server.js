@@ -17,9 +17,9 @@ const dealerRouter = require('./routes/dealers')
 const saleRouter = require('./routes/sales')
 const jobRouter = require('./routes/jobs')
 //Use router
-app.use('/cars',carRouter)
-app.use('/dealers',dealerRouter)
-app.use('/sales',saleRouter)
-app.use('/jobs',jobRouter)
+app.use('/api/cars',carRouter)
+app.use('/api/dealers',dealerRouter)
+app.use('/api/sales',saleRouter)
+app.use('/api/jobs',jobRouter)
 
 app.listen(5500, () => console.log('Server on')) //Start app
