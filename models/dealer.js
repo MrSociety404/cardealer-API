@@ -25,8 +25,11 @@ const dealerSchema = new mongoose.Schema({
   },
   image: {
     type: String,
-    required: true,
-    default: 'https://i.imgur.com/BG7Nyh6.png'
+    default: 'https://i.imgur.com/BG7Nyh6.png',
+  },
+  status: {
+    type: String,
+    default: 'Novice',
   }
 
 })

@@ -27,6 +27,7 @@ exports.addDealer = async (req, res) => {
       username: req.body.username,
       password: await bcrypt.hash(req.body.password, 10),
       image: req.body.image,
+      status: req.body.status,
     })
     const newDealer = await dealer.save()
     res.status(201).json(newDealer)
