@@ -9,7 +9,14 @@ const isUniqueUsername = require('../middleware/isUniqueUsername')
 const DealerControler = require('../controllers/dealerController')
 
 
+//check cookie
 router.get('/me', checkAuth, (req, res) => {
+  res.status(200).json({message: "Ok !"})
+})
+
+// destroy cookie
+router.get('/logout', checkAuth, (req, res) => {
+  res.cookie('token','expired token' , {maxAge: 0})
   res.status(200).json({message: "Ok !"})
 })
 
