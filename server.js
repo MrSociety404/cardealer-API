@@ -4,6 +4,8 @@ const express = require('express')
 const app = express()
 const mongoose = require('mongoose')
 const cors = require('cors')
+const cookieParser = require('cookie-parser');
+
 
 mongoose.connect(process.env.DATABASE_URL, { useNewUrlParser: true, useUnifiedTopology: true }) //Connect mongodb
 const db = mongoose.connection
@@ -11,8 +13,10 @@ db.on('error', (error) => console.log(error)) // On error return it in the conso
 db.once('open', () => console.log('Connected to Database')) // If connexion sucess, consolelog a sucess statement
 
 app.use(cors({
-  origin: 'http://localhost:3000'
+  origin: 'http://localhost:3000',
+  credentials: true
 }))
+app.use(cookieParser());
 app.use(express.json()) // accept json into the app
 
 //Create all router
