@@ -9,7 +9,7 @@ const isUniqueUsername = require('../middleware/isUniqueUsername')
 const DealerControler = require('../controllers/dealerController')
 
 
-router.patch('/me', checkAuth, (req, res) => {
+router.get('/me', checkAuth, (req, res) => {
   res.status(200).json({message: "Ok !"})
 })
 
