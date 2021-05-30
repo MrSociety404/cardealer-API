@@ -47,7 +47,8 @@ exports.login = async (req, res) => {
       {
         expiresIn: "2h"
       })
-      res.status(200).json({message: "Auth sucess", token: token})
+      res.cookie('token',token, {httpOnly: true}) // secure: true for https
+      res.status(200).json({message: "Auth sucess"})
     } else {
       res.status(400).json({message: "Auth failed"})
     }
