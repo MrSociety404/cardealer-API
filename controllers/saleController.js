@@ -3,7 +3,7 @@ const Sale = require('../models/sale')
 exports.getAllSales = async (req, res) => {
   try {
     const sale = await Sale.find({},[],{
-      sort: {date: 'asc'}
+      sort: {date: 'desc'}
     })
     .populate({path: 'dealer',select: 'firstname lastname'})
     .populate({ path: 'car', select: 'label retail image'})
