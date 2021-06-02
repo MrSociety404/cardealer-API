@@ -7,7 +7,7 @@ const getSettingByName = require('../middleware/getSettingByName')
 const SettingController = require('../controllers/settingController')
 
 // Getting one sale
-router.get('/:name' , checkAuth ,getSettingByName , SettingController.getOneSetting)
+router.get('/:name' ,getSettingByName , SettingController.getOneSetting)
 
 // Edit one sale
 router.patch('/:name', checkAuth , SettingController.editOneSetting)
