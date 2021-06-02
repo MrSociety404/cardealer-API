@@ -13,7 +13,7 @@ db.on('error', (error) => console.log(error)) // On error return it in the conso
 db.once('open', () => console.log('Connected to Database')) // If connexion sucess, consolelog a sucess statement
 
 app.use(cors({
-  // origin: 'http://localhost:3000',
+  origin: 'http://localhost:3000',
   credentials: true
 }))
 app.use(cookieParser());
