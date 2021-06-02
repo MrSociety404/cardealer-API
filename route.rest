@@ -93,3 +93,14 @@ Authorization: Bear {{token}}
   "car" : "60ab97f7881c2c385891efc5",
   "price": 5000
 }
+
+###
+GET http://localhost:5500/api/settings/jobState
+
+###
+PATCH http://localhost:5500/api/settings/jobState
+Content-Type: application/json
+
+{
+  "state": false
+}

@@ -13,7 +13,7 @@ db.on('error', (error) => console.log(error)) // On error return it in the conso
 db.once('open', () => console.log('Connected to Database')) // If connexion sucess, consolelog a sucess statement
 
 app.use(cors({
-  origin: 'http://localhost:3000',
+  // origin: 'http://localhost:3000',
   credentials: true
 }))
 app.use(cookieParser());
@@ -24,10 +24,12 @@ const carRouter = require('./routes/cars')
 const dealerRouter = require('./routes/dealers')
 const saleRouter = require('./routes/sales')
 const jobRouter = require('./routes/jobs')
+const settingRouter = require('./routes/settings')
 //Use router
 app.use('/api/cars',carRouter)
 app.use('/api/dealers',dealerRouter)
 app.use('/api/sales',saleRouter)
 app.use('/api/jobs',jobRouter)
+app.use('/api/settings',settingRouter)
 
 app.listen(5500, () => console.log('Server on')) //Start app
